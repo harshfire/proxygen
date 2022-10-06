@@ -15,6 +15,7 @@ orbs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-and-test: # This is the name of the job, feel free to change it to better match what you're trying to do!
+   
     docker:
       - image: cimg/python:3.10.2
     # Checkout the code as the first step. This is a dedicated CircleCI step.
@@ -22,16 +23,23 @@ jobs:
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
+    
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
-          name: Run tests
+          name: Fetch ninja
           # This assumes pytest is installed via the install-package step above
-          command: pytest
+          command: python3 build/fbcode_builder/getdeps.py fetch --no-tests ninja
+      - run:
+          name: Build proxygen
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --src-dir=. proxygen  --project-install-prefix proxygen:/usr/local
+      - run:
+          name: Test proxygen
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py test --src-dir=. proxygen  --project-install-prefix proxygen:/usr/local
           
 
 # Invoke jobs via workflows
