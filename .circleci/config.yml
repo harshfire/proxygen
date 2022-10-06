@@ -125,6 +125,102 @@ jobs:
           # This assumes pytest is installed via the install-package step above
           command: python3 build/fbcode_builder/getdeps.py fetch --no-tests wangle
       - run:
+          name: Build ninja
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests ninja
+      - run:
+          name: Build cmake
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests cmake
+      - run:
+          name: Build zlib
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests zlib
+      - run:
+          name: Build double-conversion
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests double-conversion
+      - run:
+          name: Build boost
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests boost
+      - run:
+          name: Build zstd
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests zstd
+      - run:
+          name: Build fmt
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests fmt
+      - run:
+          name: Build gflags
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests gflags
+      - run:
+          name: Build glog
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests glog
+      - run:
+          name: Build googletest
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests googletest
+      - run:
+          name: Build libevent
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests libevent
+      - run:
+          name: Build autoconf
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests autoconf
+      - run:
+          name: Build lz4
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests lz4
+      - run:
+          name: Build snappy
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests snappy
+      - run:
+          name: Build automake
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests automake
+      - run:
+          name: Build libtool
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests libtool
+      - run:
+          name: Build gperf
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests gperf
+      - run:
+          name: Build libsodium
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests libsodium
+      - run:
+          name: Build xz
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests xz
+      - run:
+          name: Build folly
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests folly
+      - run:
+          name: Build libsodium
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests libsodium
+      - run:
+          name: Build fizz
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py fetch --no-tests fizz
+      - run:
+          name: Build mvfst
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests mvfst
+      - run:
+          name: Build wangle
+          # This assumes pytest is installed via the install-package step above
+          command: python3 build/fbcode_builder/getdeps.py build --no-tests wangle
+      - run:
           name: Build proxygen
           # This assumes pytest is installed via the install-package step above
           command: python3 build/fbcode_builder/getdeps.py build --src-dir=. proxygen  --project-install-prefix proxygen:/usr/local
